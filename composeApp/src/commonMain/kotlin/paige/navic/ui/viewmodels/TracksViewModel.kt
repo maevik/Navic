@@ -1,6 +1,5 @@
 package paige.navic.ui.viewmodels
 
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

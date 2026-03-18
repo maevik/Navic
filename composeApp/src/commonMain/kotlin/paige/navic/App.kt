@@ -79,8 +79,6 @@ import paige.navic.ui.screens.PlaylistsScreen
 import paige.navic.ui.screens.QueueScreen
 import paige.navic.ui.screens.SearchScreen
 import paige.navic.ui.screens.SharesScreen
-import paige.navic.ui.screens.TrackInfoScreen
-import paige.navic.ui.screens.TracksScreen
 import paige.navic.ui.screens.settings.BottomBarScreen
 import paige.navic.ui.screens.settings.FontsScreen
 import paige.navic.ui.screens.settings.NowPlayingScreen
@@ -90,6 +88,8 @@ import paige.navic.ui.screens.settings.SettingsAcknowledgementsScreen
 import paige.navic.ui.screens.settings.SettingsAppearanceScreen
 import paige.navic.ui.screens.settings.SettingsBehaviourScreen
 import paige.navic.ui.screens.settings.SettingsScreen
+import paige.navic.ui.screens.tracks.TrackInfoScreen
+import paige.navic.ui.screens.tracks.TracksScreen
 import paige.navic.ui.theme.NavicTheme
 import paige.navic.utils.checkForUpdate
 
