@@ -13,6 +13,7 @@ import androidx.compose.animation.scaleOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -35,13 +36,12 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ContainedLoadingIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -54,6 +54,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -359,7 +361,9 @@ private fun ArtistScreenHeader(
 						)
 					}
 					Row(
-						verticalAlignment = Alignment.CenterVertically
+						modifier = Modifier.fillMaxWidth(),
+						verticalAlignment = Alignment.CenterVertically,
+						horizontalArrangement = Arrangement.End
 					) {
 						AnimatedVisibility(
 							!scrollState.canScrollBackward,
@@ -377,18 +381,24 @@ private fun ArtistScreenHeader(
 								)
 							)
 						}
-						IconButton(
-							onClick = {
-								ctx.clickSound()
-								onPlay()
-							},
-							colors = IconButtonDefaults.filledIconButtonColors(),
-							enabled = playEnabled,
-							modifier = Modifier.size(60.dp)
+						Box(
+							modifier = Modifier
+								.shadow(8.dp, CircleShape)
+								.clip(CircleShape)
+								.background(if (playEnabled)
+									MaterialTheme.colorScheme.primary
+								else MaterialTheme.colorScheme.primary.copy(alpha = .5f))
+								.size(60.dp)
+								.clickable(enabled = playEnabled) {
+									ctx.clickSound()
+									onPlay()
+								},
+							contentAlignment = Alignment.Center
 						) {
 							Icon(
 								Icons.Filled.Play,
-								contentDescription = stringResource(Res.string.action_play)
+								contentDescription = stringResource(Res.string.action_play),
+								tint = MaterialTheme.colorScheme.onPrimary
 							)
 						}
 					}
