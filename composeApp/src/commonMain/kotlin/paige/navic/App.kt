@@ -74,7 +74,7 @@ import paige.navic.ui.screens.ArtistsScreen
 import paige.navic.ui.screens.CreatePlaylistScreen
 import paige.navic.ui.screens.LibraryScreen
 import paige.navic.ui.screens.LyricsScreen
-import paige.navic.ui.screens.PlayerScreen
+import paige.navic.ui.screens.player.PlayerScreen
 import paige.navic.ui.screens.PlaylistsScreen
 import paige.navic.ui.screens.QueueScreen
 import paige.navic.ui.screens.SearchScreen
