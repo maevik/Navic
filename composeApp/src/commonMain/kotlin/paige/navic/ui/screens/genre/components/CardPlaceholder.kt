@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.genres.components
+package paige.navic.ui.screens.genre.components
 
 import androidx.compose.runtime.Composable
 

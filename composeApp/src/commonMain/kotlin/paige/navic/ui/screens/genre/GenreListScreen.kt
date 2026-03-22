@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.genres
+package paige.navic.ui.screens.genre
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
@@ -33,9 +33,9 @@ import paige.navic.ui.components.layouts.NestedTopBar
 import paige.navic.ui.components.layouts.RootBottomBar
 import paige.navic.ui.components.layouts.RootTopBar
 import paige.navic.ui.components.layouts.artGridError
-import paige.navic.ui.screens.genres.components.GenreListScreenCard
-import paige.navic.ui.screens.genres.components.GenreListScreenCardPlaceholder
-import paige.navic.ui.screens.genres.viewmodels.GenreListViewModel
+import paige.navic.ui.screens.genre.components.GenreListScreenCard
+import paige.navic.ui.screens.genre.components.GenreListScreenCardPlaceholder
+import paige.navic.ui.screens.genre.viewmodels.GenreListViewModel
 import paige.navic.utils.LocalBottomBarScrollManager
 import paige.navic.utils.UiState
 import paige.navic.utils.withoutTop

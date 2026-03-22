@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.tracks.components
+package paige.navic.ui.screens.track.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.clickable

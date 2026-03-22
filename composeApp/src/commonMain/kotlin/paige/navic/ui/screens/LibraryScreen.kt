@@ -69,11 +69,11 @@ import paige.navic.ui.components.layouts.RootTopBar
 import paige.navic.ui.components.layouts.horizontalSection
 import paige.navic.ui.screens.album.components.AlbumListScreenItem
 import paige.navic.ui.screens.artist.ArtistsScreenItem
-import paige.navic.ui.screens.genres.components.GenreListScreenCard
+import paige.navic.ui.screens.genre.components.GenreListScreenCard
 import paige.navic.ui.theme.defaultFont
 import paige.navic.ui.screens.album.viewmodels.AlbumListViewModel
 import paige.navic.ui.screens.artist.viewmodels.ArtistListViewModel
-import paige.navic.ui.screens.genres.viewmodels.GenreListViewModel
+import paige.navic.ui.screens.genre.viewmodels.GenreListViewModel
 import paige.navic.ui.screens.playlist.components.PlaylistListScreenItem
 import paige.navic.ui.screens.playlist.viewmodels.PlaylistListViewModel
 import paige.navic.utils.LocalBottomBarScrollManager
@@ -193,7 +193,7 @@ fun LibraryScreen(
 					}
 					horizontalSection(
 						title = Res.string.title_playlists,
-						destination = Screen.Playlists(true),
+						destination = Screen.PlaylistList(true),
 						state = playlistsState,
 						key = { it.id },
 						seeAll = true

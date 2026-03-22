@@ -41,7 +41,7 @@ fun PlaylistListScreenItem(
 		ArtGridItem(
 			onClick = {
 				ctx.clickSound()
-				backStack.add(Screen.Tracks(playlist, "playlists"))
+				backStack.add(Screen.TrackList(playlist, "playlists"))
 			},
 			onLongClick = { viewModel.selectPlaylist(playlist) },
 			coverArtId = playlist.coverArtId,

@@ -15,7 +15,7 @@ sealed interface Screen : NavKey {
 		val nested: Boolean = false
 	) : Screen
 	@Serializable
-	data class Playlists(
+	data class PlaylistList(
 		val nested: Boolean = false
 	) : Screen
 	@Serializable
@@ -36,8 +36,8 @@ sealed interface Screen : NavKey {
 	@Serializable data object NowPlaying : Screen
 	@Serializable data object Lyrics : Screen
 	@Serializable data object Queue : Screen
-	@Serializable data class Tracks(val partialCollection: SongCollection, val tab: String) : Screen
-	@Serializable data class TrackInfo(val track: Song) : Screen
+	@Serializable data class TrackList(val partialCollection: SongCollection, val tab: String) : Screen
+	@Serializable data class TrackDetail(val track: Song) : Screen
 	@Serializable data class Search(
 		val nested: Boolean = false
 	) : Screen

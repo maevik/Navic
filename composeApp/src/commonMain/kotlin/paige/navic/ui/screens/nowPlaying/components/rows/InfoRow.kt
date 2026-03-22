@@ -45,7 +45,7 @@ fun NowPlayingInfoRow() {
 
 							val lastScreen = backStack.lastOrNull()
 
-							val isSameAlbum = if (lastScreen is Screen.Tracks) {
+							val isSameAlbum = if (lastScreen is Screen.TrackList) {
 								lastScreen.partialCollection.id == track.albumId
 							} else {
 								false
@@ -53,7 +53,7 @@ fun NowPlayingInfoRow() {
 
 							if (!isSameAlbum)
 								backStack.add(
-									Screen.Tracks(
+									Screen.TrackList(
 										playerState.currentCollection ?: return@clickable,
 										""
 									)

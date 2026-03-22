@@ -198,7 +198,7 @@ fun ArtistDetailScreen(
 									albums.sortedByDescending { it.playCount }
 								) { album ->
 									ArtCarouselItem(album.coverArtId, album.name, album.name) {
-										backStack.add(Screen.Tracks(album, "artist"))
+										backStack.add(Screen.TrackList(album, "artist"))
 									}
 								}
 							}

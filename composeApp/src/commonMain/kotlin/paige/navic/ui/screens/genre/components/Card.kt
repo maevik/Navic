@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.genres.components
+package paige.navic.ui.screens.genre.components
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -36,7 +36,7 @@ import paige.navic.data.session.SessionManager
 import paige.navic.data.session.SessionManager.getCoverArtUrl
 import paige.navic.ui.components.common.CoverArt
 import paige.navic.ui.theme.defaultFont
-import paige.navic.ui.screens.genres.viewmodels.GenreWithAlbums
+import paige.navic.ui.screens.genre.viewmodels.GenreWithAlbums
 import kotlin.math.abs
 
 @Composable

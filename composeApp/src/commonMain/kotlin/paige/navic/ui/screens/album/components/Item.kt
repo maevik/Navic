@@ -42,7 +42,7 @@ fun AlbumListScreenItem(
 		ArtGridItem(
 			onClick = {
 				ctx.clickSound()
-				backStack.add(Screen.Tracks(album, tab))
+				backStack.add(Screen.TrackList(album, tab))
 			},
 			onLongClick = { viewModel.selectAlbum(album) },
 			coverArtId = album.coverArtId,

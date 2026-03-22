@@ -72,7 +72,7 @@ fun NowPlayingMoreButton() {
 					playerState.currentCollection?.let { tracks ->
 						expanded = false
 						backStack.remove(Screen.NowPlaying)
-						backStack.add(Screen.Tracks(tracks, ""))
+						backStack.add(Screen.TrackList(tracks, ""))
 					}
 				},
 				text = {
@@ -111,7 +111,7 @@ fun NowPlayingMoreButton() {
 					track?.let { track ->
 						expanded = false
 						backStack.remove(Screen.NowPlaying)
-						backStack.add(Screen.TrackInfo(track))
+						backStack.add(Screen.TrackDetail(track))
 					}
 				},
 				text = { Text(stringResource(Res.string.action_track_info)) },

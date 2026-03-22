@@ -73,7 +73,7 @@ private enum class NavItem(
 		label = Res.string.title_albums
 	),
 	PLAYLISTS(
-		destination = Screen.Playlists(),
+		destination = Screen.PlaylistList(),
 		icon = Icons.Outlined.PlaylistPlay,
 		label = Res.string.title_playlists
 	),

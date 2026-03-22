@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.tracks.components
+package paige.navic.ui.screens.track.components
 
 import androidx.compose.foundation.lazy.LazyListScope
 import dev.zt64.subsonic.api.model.Artist
@@ -32,7 +32,7 @@ fun LazyListScope.tracksScreenMoreByArtistRow(
 					title = album.name,
 					contentDescription = album.name,
 					onClick = {
-						backStack.add(Screen.Tracks(album, tab))
+						backStack.add(Screen.TrackList(album, tab))
 					}
 				)
 			}

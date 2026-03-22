@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.tracks
+package paige.navic.ui.screens.track
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -41,7 +41,7 @@ import paige.navic.utils.toFileSize
 import paige.navic.utils.toHoursMinutesSeconds
 
 @Composable
-fun TrackInfoScreen(track: Song) {
+fun TrackDetailScreen(track: Song) {
 	Scaffold(
 		topBar = { NestedTopBar({ Text(track.title) }) }
 	) { contentPadding ->

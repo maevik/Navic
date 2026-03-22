@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.tracks.components
+package paige.navic.ui.screens.track.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.genres.viewmodels
+package paige.navic.ui.screens.genre.viewmodels
 
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.lifecycle.ViewModel

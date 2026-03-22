@@ -79,7 +79,7 @@ import paige.navic.ui.screens.playlist.PlaylistListScreen
 import paige.navic.ui.screens.QueueScreen
 import paige.navic.ui.screens.search.SearchScreen
 import paige.navic.ui.screens.SharesScreen
-import paige.navic.ui.screens.genres.GenreListScreen
+import paige.navic.ui.screens.genre.GenreListScreen
 import paige.navic.ui.screens.settings.BottomBarScreen
 import paige.navic.ui.screens.settings.FontsScreen
 import paige.navic.ui.screens.settings.SettingsAboutScreen
@@ -89,8 +89,8 @@ import paige.navic.ui.screens.settings.SettingsDeveloperScreen
 import paige.navic.ui.screens.settings.SettingsNowPlayingScreen
 import paige.navic.ui.screens.settings.SettingsPlaybackScreen
 import paige.navic.ui.screens.settings.SettingsScreen
-import paige.navic.ui.screens.tracks.TrackInfoScreen
-import paige.navic.ui.screens.tracks.TracksScreen
+import paige.navic.ui.screens.track.TrackDetailScreen
+import paige.navic.ui.screens.track.TrackListScreen
 import paige.navic.ui.theme.NavicTheme
 import paige.navic.utils.BottomBarScrollManager
 import paige.navic.utils.LocalBottomBarScrollManager
@@ -234,7 +234,7 @@ private fun entryProvider(
 		entry<Screen.AlbumList>(metadata = navtabMetadata) { key ->
 			AlbumListScreen(key.nested, key.listType)
 		}
-		entry<Screen.Playlists>(metadata = navtabMetadata) { key ->
+		entry<Screen.PlaylistList>(metadata = navtabMetadata) { key ->
 			PlaylistListScreen(key.nested)
 		}
 		entry<Screen.ArtistList>(metadata = navtabMetadata) { key ->
@@ -262,11 +262,11 @@ private fun entryProvider(
 		entry<Screen.Queue>(metadata = BottomSheetSceneStrategy.bottomSheet(isTransparent = true)) {
 			QueueScreen()
 		}
-		entry<Screen.Tracks>(metadata = detailPane("root")) { key ->
-			TracksScreen(key.partialCollection, key.tab)
+		entry<Screen.TrackList>(metadata = detailPane("root")) { key ->
+			TrackListScreen(key.partialCollection, key.tab)
 		}
-		entry<Screen.TrackInfo>(metadata = detailPane("root")) { key ->
-			TrackInfoScreen(key.track)
+		entry<Screen.TrackDetail>(metadata = detailPane("root")) { key ->
+			TrackDetailScreen(key.track)
 		}
 		entry<Screen.Search>(metadata = navtabMetadata) { key ->
 			SearchScreen(key.nested)

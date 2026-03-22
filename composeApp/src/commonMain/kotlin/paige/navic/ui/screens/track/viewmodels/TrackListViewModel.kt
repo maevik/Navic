@@ -1,4 +1,4 @@
-package paige.navic.ui.viewmodels
+package paige.navic.ui.screens.track.viewmodels
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.lifecycle.ViewModel
@@ -16,9 +16,9 @@ import paige.navic.data.repositories.TracksRepository
 import paige.navic.data.session.SessionManager
 import paige.navic.utils.UiState
 
-class TracksViewModel(
-	private val partialCollection: SongCollection,
-	private val repository: TracksRepository = TracksRepository()
+class TrackListViewModel(
+    private val partialCollection: SongCollection,
+    private val repository: TracksRepository = TracksRepository()
 ) : ViewModel() {
 	private val _tracksState = MutableStateFlow<UiState<SongCollection>>(UiState.Loading)
 	val tracksState: StateFlow<UiState<SongCollection>> = _tracksState.asStateFlow()

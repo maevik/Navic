@@ -1,4 +1,4 @@
-package paige.navic.ui.screens.tracks
+package paige.navic.ui.screens.track
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -37,15 +37,15 @@ import paige.navic.ui.components.common.ContentUnavailable
 import paige.navic.ui.components.common.ErrorBox
 import paige.navic.ui.components.dialogs.ShareDialog
 import paige.navic.ui.components.layouts.RootBottomBar
-import paige.navic.ui.screens.tracks.components.TrackRowDropdown
-import paige.navic.ui.screens.tracks.components.TracksScreenFooterRow
-import paige.navic.ui.screens.tracks.components.TracksScreenHeadingRow
-import paige.navic.ui.screens.tracks.components.TracksScreenHeadingRowButtons
-import paige.navic.ui.screens.tracks.components.TracksScreenTopBar
-import paige.navic.ui.screens.tracks.components.TracksScreenTrackRow
-import paige.navic.ui.screens.tracks.components.tracksScreenMoreByArtistRow
-import paige.navic.ui.screens.tracks.components.tracksScreenTrackRowPlaceholder
-import paige.navic.ui.viewmodels.TracksViewModel
+import paige.navic.ui.screens.track.components.TrackRowDropdown
+import paige.navic.ui.screens.track.components.TracksScreenFooterRow
+import paige.navic.ui.screens.track.components.TracksScreenHeadingRow
+import paige.navic.ui.screens.track.components.TracksScreenHeadingRowButtons
+import paige.navic.ui.screens.track.components.TracksScreenTopBar
+import paige.navic.ui.screens.track.components.TracksScreenTrackRow
+import paige.navic.ui.screens.track.components.tracksScreenMoreByArtistRow
+import paige.navic.ui.screens.track.components.tracksScreenTrackRowPlaceholder
+import paige.navic.ui.screens.track.viewmodels.TrackListViewModel
 import paige.navic.utils.LocalBottomBarScrollManager
 import paige.navic.utils.UiState
 import paige.navic.utils.fadeFromTop
@@ -54,11 +54,11 @@ import kotlin.time.Duration
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TracksScreen(
+fun TrackListScreen(
 	partialTracks: SongCollection,
 	tab: String,
-	viewModel: TracksViewModel = viewModel(key = partialTracks.toString()) {
-		TracksViewModel(partialTracks)
+	viewModel: TrackListViewModel = viewModel(key = partialTracks.toString()) {
+		TrackListViewModel(partialTracks)
 	}
 ) {
 	val player = LocalMediaPlayer.current
