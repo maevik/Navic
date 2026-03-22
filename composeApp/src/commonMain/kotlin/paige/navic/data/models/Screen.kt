@@ -41,7 +41,7 @@ sealed interface Screen : NavKey {
 	@Serializable data class Search(
 		val nested: Boolean = false
 	) : Screen
-	@Serializable data object Shares : Screen
+	@Serializable data object ShareList : Screen
 	@Serializable data class ArtistDetail(val artist: String) : Screen
 
 	// settings

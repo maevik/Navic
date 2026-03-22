@@ -1,10 +1,9 @@
-package paige.navic.ui.components.dialogs
+package paige.navic.ui.screens.share.dialogs
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
@@ -19,11 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import navic.composeapp.generated.resources.Res
 import navic.composeapp.generated.resources.action_cancel
@@ -35,46 +31,23 @@ import navic.composeapp.generated.resources.title_create_share
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import paige.navic.LocalSnackbarState
-import paige.navic.data.session.SessionManager
 import paige.navic.icons.Icons
 import paige.navic.icons.outlined.Share
 import paige.navic.ui.components.common.DurationPicker
 import paige.navic.ui.components.common.Form
 import paige.navic.ui.components.common.FormButton
 import paige.navic.ui.components.common.FormRow
+import paige.navic.ui.components.dialogs.FormDialog
 import paige.navic.ui.screens.settings.components.SettingSwitchRow
+import paige.navic.ui.screens.share.viewmodels.ShareDialogViewModel
 import paige.navic.utils.UiState
-import kotlin.time.Clock
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
-
-class ShareViewModel : ViewModel() {
-	private val _state = MutableStateFlow<UiState<String?>>(UiState.Success(null))
-	val state = _state.asStateFlow()
-
-	fun share(
-		id: String,
-		expiry: Duration?
-	) {
-		viewModelScope.launch {
-			_state.value = UiState.Loading
-			try {
-				val expiration = expiry?.let { Clock.System.now() + it  }
-				val url = SessionManager.api
-					.createShare(listOf(id), expiresAt = expiration)
-					.url
-				_state.value = UiState.Success(url)
-			} catch(e: Exception) {
-				_state.value = UiState.Error(e)
-			}
-		}
-	}
-}
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun ShareDialog(
-	viewModel: ShareViewModel = viewModel { ShareViewModel() },
+	viewModel: ShareDialogViewModel = viewModel { ShareDialogViewModel() },
 	id: String?,
 	onIdClear: () -> Unit,
 	expiry: Duration?,
@@ -86,7 +59,6 @@ fun ShareDialog(
 	val clipboard = LocalClipboardManager.current
 
 	val snackbarState = LocalSnackbarState.current
-	val scrollState = rememberScrollState()
 	val state by viewModel.state.collectAsState()
 
 	LaunchedEffect(state) {

@@ -41,7 +41,7 @@ import paige.navic.data.session.SessionManager
 import paige.navic.icons.Icons
 import paige.navic.icons.outlined.Album
 import paige.navic.ui.components.common.ContentUnavailable
-import paige.navic.ui.components.dialogs.ShareDialog
+import paige.navic.ui.screens.share.dialogs.ShareDialog
 import paige.navic.ui.components.layouts.ArtGrid
 import paige.navic.ui.components.layouts.NestedTopBar
 import paige.navic.ui.components.layouts.RootBottomBar

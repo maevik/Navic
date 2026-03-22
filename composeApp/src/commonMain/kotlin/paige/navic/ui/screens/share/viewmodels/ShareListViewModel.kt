@@ -1,4 +1,4 @@
-package paige.navic.ui.viewmodels
+package paige.navic.ui.screens.share.viewmodels
 
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.lifecycle.ViewModel
@@ -11,7 +11,7 @@ import paige.navic.data.repositories.SharesRepository
 import paige.navic.data.session.SessionManager
 import paige.navic.utils.UiState
 
-class SharesViewModel(
+class ShareListViewModel(
 	private val repository: SharesRepository = SharesRepository()
 ) : ViewModel() {
 	private val _sharesState = MutableStateFlow<UiState<List<Share>>>(UiState.Loading)

@@ -35,7 +35,7 @@ import paige.navic.icons.Icons
 import paige.navic.icons.outlined.Note
 import paige.navic.ui.components.common.ContentUnavailable
 import paige.navic.ui.components.common.ErrorBox
-import paige.navic.ui.components.dialogs.ShareDialog
+import paige.navic.ui.screens.share.dialogs.ShareDialog
 import paige.navic.ui.components.layouts.RootBottomBar
 import paige.navic.ui.screens.track.components.TrackRowDropdown
 import paige.navic.ui.screens.track.components.TracksScreenFooterRow

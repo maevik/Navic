@@ -78,7 +78,7 @@ import paige.navic.ui.screens.nowPlaying.NowPlayingScreen
 import paige.navic.ui.screens.playlist.PlaylistListScreen
 import paige.navic.ui.screens.QueueScreen
 import paige.navic.ui.screens.search.SearchScreen
-import paige.navic.ui.screens.SharesScreen
+import paige.navic.ui.screens.share.ShareListScreen
 import paige.navic.ui.screens.genre.GenreListScreen
 import paige.navic.ui.screens.settings.BottomBarScreen
 import paige.navic.ui.screens.settings.FontsScreen
@@ -271,8 +271,8 @@ private fun entryProvider(
 		entry<Screen.Search>(metadata = navtabMetadata) { key ->
 			SearchScreen(key.nested)
 		}
-		entry<Screen.Shares> {
-			SharesScreen()
+		entry<Screen.ShareList> {
+			ShareListScreen()
 		}
 		entry<Screen.ArtistDetail> { key ->
 			ArtistDetailScreen(key.artist)

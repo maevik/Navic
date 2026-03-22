@@ -192,7 +192,7 @@ private fun Actions(
 						text = { Text(stringResource(Res.string.action_view_shares)) },
 						onClick = {
 							expanded = false
-							backStack.add(Screen.Shares)
+							backStack.add(Screen.ShareList)
 						},
 						leadingIcon = { Icon(Icons.Outlined.Share, null) }
 					)
