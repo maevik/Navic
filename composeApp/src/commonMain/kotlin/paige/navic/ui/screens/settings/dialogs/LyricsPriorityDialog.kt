@@ -34,7 +34,7 @@ import paige.navic.data.repositories.LyricsProvider
 import paige.navic.icons.Icons
 import paige.navic.icons.outlined.DragHandle
 import paige.navic.ui.components.common.ErrorBox
-import paige.navic.ui.viewmodels.LyricsPriorityViewModel
+import paige.navic.ui.screens.settings.viewmodels.LyricsPriorityViewModel
 import paige.navic.utils.DraggableListState
 import paige.navic.utils.UiState
 import paige.navic.utils.dragHandle

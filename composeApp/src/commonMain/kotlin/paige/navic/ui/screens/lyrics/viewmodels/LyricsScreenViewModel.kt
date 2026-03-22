@@ -1,4 +1,4 @@
-package paige.navic.ui.viewmodels
+package paige.navic.ui.screens.lyrics.viewmodels
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.lifecycle.ViewModel
@@ -11,9 +11,9 @@ import paige.navic.data.repositories.LyricsRepository
 import paige.navic.data.repositories.LyricsResult
 import paige.navic.utils.UiState
 
-class LyricsViewModel(
-	private val track: Song?,
-	private val repository: LyricsRepository = LyricsRepository()
+class LyricsScreenViewModel(
+    private val track: Song?,
+    private val repository: LyricsRepository = LyricsRepository()
 ) : ViewModel() {
 	private val _lyricsState = MutableStateFlow<UiState<LyricsResult?>>(UiState.Loading)
 	val lyricsState = _lyricsState.asStateFlow()

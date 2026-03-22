@@ -1,4 +1,4 @@
-package paige.navic.ui.screens
+package paige.navic.ui.screens.lyrics.dialogs
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -62,7 +62,6 @@ import kotlinx.coroutines.launch
 import navic.composeapp.generated.resources.Res
 import navic.composeapp.generated.resources.action_share_lyrics
 import navic.composeapp.generated.resources.app_name
-import navic.composeapp.generated.resources.info_unknown_artist
 import org.jetbrains.compose.resources.stringResource
 import paige.navic.LocalShareManager
 import paige.navic.LocalSnackbarState
